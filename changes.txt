@@ -1,3 +1,6 @@
+# April 29, 2012 - v0.1.3_01
+	- DealCard also no longer treats J/K/Q as 11/12/13 (respectively)
+
 # April 29, 2012 - v0.1.3
 	- added the ability to start a new game without reloading client
 	- began to implement betting

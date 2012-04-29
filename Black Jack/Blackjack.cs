@@ -38,11 +38,20 @@ namespace Black_Jack
             if (rnCard == 1)
                 card = "a";
             else if (rnCard == 11)
+            {
                 card = "j";
+                rnCard = 10;
+            }
             else if (rnCard == 12)
+            {
                 card = "q";
+                rnCard = 10;
+            }
             else if (rnCard == 13)
+            {
                 card = "k";
+                rnCard = 10;
+            }
             else
                 card = rnCard.ToString();
 
@@ -132,7 +141,7 @@ namespace Black_Jack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.3 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.3_01 by Ian P (ippavlin)";
             StartNewGame();
         }
 
