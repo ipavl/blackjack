@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A980D63-2D27-44E5-A427-4C64C0C6A47E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blackjack</RootNamespace>
+    <AssemblyName>Blackjack</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Black_Jack.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blackjack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Blackjack.Designer.cs">
+      <DependentUpon>Blackjack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Blackjack.resx">
+      <DependentUpon>Blackjack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Content\Background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Cards\back-blue-75-1.png" />
+    <Content Include="Content\Cards\back-blue-75-2.png" />
+    <Content Include="Content\Cards\back-blue-75-3.png" />
+    <Content Include="Content\Cards\back-red-75-1.png" />
+    <Content Include="Content\Cards\back-red-75-2.png" />
+    <Content Include="Content\Cards\back-red-75-3.png" />
+    <Content Include="Content\Cards\clubs-10-75.png" />
+    <Content Include="Content\Cards\clubs-2-75.png" />
+    <Content Include="Content\Cards\clubs-3-75.png" />
+    <Content Include="Content\Cards\clubs-4-75.png" />
+    <Content Include="Content\Cards\clubs-5-75.png" />
+    <Content Include="Content\Cards\clubs-6-75.png" />
+    <Content Include="Content\Cards\clubs-7-75.png" />
+    <Content Include="Content\Cards\clubs-8-75.png" />
+    <Content Include="Content\Cards\clubs-9-75.png" />
+    <Content Include="Content\Cards\clubs-a-75.png" />
+    <Content Include="Content\Cards\clubs-j-75.png" />
+    <Content Include="Content\Cards\clubs-k-75.png" />
+    <Content Include="Content\Cards\clubs-q-75.png" />
+    <Content Include="Content\Cards\diamonds-10-75.png" />
+    <Content Include="Content\Cards\diamonds-2-75.png" />
+    <Content Include="Content\Cards\diamonds-3-75.png" />
+    <Content Include="Content\Cards\diamonds-4-75.png" />
+    <Content Include="Content\Cards\diamonds-5-75.png" />
+    <Content Include="Content\Cards\diamonds-6-75.png" />
+    <Content Include="Content\Cards\diamonds-7-75.png" />
+    <Content Include="Content\Cards\diamonds-8-75.png" />
+    <Content Include="Content\Cards\diamonds-9-75.png" />
+    <Content Include="Content\Cards\diamonds-a-75.png" />
+    <Content Include="Content\Cards\diamonds-j-75.png" />
+    <Content Include="Content\Cards\diamonds-k-75.png" />
+    <Content Include="Content\Cards\diamonds-q-75.png" />
+    <Content Include="Content\Cards\hearts-10-75.png" />
+    <Content Include="Content\Cards\hearts-2-75.png" />
+    <Content Include="Content\Cards\hearts-3-75.png" />
+    <Content Include="Content\Cards\hearts-4-75.png" />
+    <Content Include="Content\Cards\hearts-5-75.png" />
+    <Content Include="Content\Cards\hearts-6-75.png" />
+    <Content Include="Content\Cards\hearts-7-75.png" />
+    <Content Include="Content\Cards\hearts-8-75.png" />
+    <Content Include="Content\Cards\hearts-9-75.png" />
+    <Content Include="Content\Cards\hearts-a-75.png" />
+    <Content Include="Content\Cards\hearts-j-75.png" />
+    <Content Include="Content\Cards\hearts-k-75.png" />
+    <Content Include="Content\Cards\hearts-q-75.png" />
+    <Content Include="Content\Cards\joker-b-75.png" />
+    <Content Include="Content\Cards\joker-r-75.png" />
+    <Content Include="Content\Cards\spades-10-75.png" />
+    <Content Include="Content\Cards\spades-2-75.png" />
+    <Content Include="Content\Cards\spades-3-75.png" />
+    <Content Include="Content\Cards\spades-4-75.png" />
+    <Content Include="Content\Cards\spades-5-75.png" />
+    <Content Include="Content\Cards\spades-6-75.png" />
+    <Content Include="Content\Cards\spades-7-75.png" />
+    <Content Include="Content\Cards\spades-8-75.png" />
+    <Content Include="Content\Cards\spades-9-75.png" />
+    <Content Include="Content\Cards\spades-a-75.png" />
+    <Content Include="Content\Cards\spades-j-75.png" />
+    <Content Include="Content\Cards\spades-k-75.png" />
+    <Content Include="Content\Cards\spades-q-75.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,10 @@
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\bin\Debug\Content\Background.jpg
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\bin\Debug\Blackjack.exe
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\bin\Debug\Blackjack.pdb
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Black_Jack.Blackjack.resources
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Blackjack.Properties.Resources.resources
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Blackjack.exe
+C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Blackjack.pdb
