@@ -125,41 +125,60 @@ namespace Black_Jack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            dScore1 = RandomNumber(1, 13);
-            dScore2 = RandomNumber(1, 13);
-            dealerScore = dScore1 + dScore2;
-
-            dealerCard1.Image = Image.FromFile("Content/Cards/back-red-75-2.png");
-            
-            if (rnCard == 1)
-                card = "a";
-            else if (rnCard == 11)
-                card = "j";
-            else if (rnCard == 12)
-                card = "q";
-            else if (rnCard == 13)
-                card = "k";
-
-            dealerCard2.Image = Image.FromFile("Content/Cards/spades-" + dScore2 + "-75.png");
-
-            System.Diagnostics.Debug.Print("Dealer:" + dealerScore);
-            lblDealer.Visible = false;
-            lblDealer.Text = "Dealer score: " + dealerScore;
-
-            if (dealerScore < 21)
+            try
             {
-                DealCard();
-                pScore1 = rnCard;
-                playerCard1.Image = Image.FromFile("Content/Cards/" + dCard);
-                DealCard();
-                pScore2 = rnCard;
-                playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
-                playerScore = pScore1 + pScore2;
-                lblTotal.Text = "Score: " + playerScore;
-                playerCardsCount = 2;
+                dScore1 = RandomNumber(1, 13);
+                dScore2 = RandomNumber(1, 13);
+                rnSuit = RandomNumber(1, 4);
+                dealerScore = dScore1 + dScore2;
+
+                dealerCard1.Image = Image.FromFile("Content/Cards/back-red-75-2.png");
+
+                if (dScore2 == 1)
+                    card = "a";
+                else if (dScore2 == 11)
+                    card = "j";
+                else if (dScore2 == 12)
+                    card = "q";
+                else if (dScore2 == 13)
+                    card = "k";
+                else
+                    card = dScore2.ToString();
+
+                if (rnSuit == 1)
+                    suit = "clubs";
+                else if (rnSuit == 2)
+                    suit = "diamonds";
+                else if (rnSuit == 3)
+                    suit = "hearts";
+                else if (rnSuit == 4)
+                    suit = "spades";
+
+                dealerCard2.Image = Image.FromFile("Content/Cards/" + suit + "-" + card + "-75.png");
+
+                System.Diagnostics.Debug.Print("Dealer:" + dealerScore);
+                lblDealer.Visible = false;
+                lblDealer.Text = "Dealer score: " + dealerScore;
+
+                if (dealerScore < 21)
+                {
+                    DealCard();
+                    pScore1 = rnCard;
+                    playerCard1.Image = Image.FromFile("Content/Cards/" + dCard);
+                    System.Diagnostics.Debug.Print(dCard);
+                    DealCard();
+                    pScore2 = rnCard;
+                    playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
+                    System.Diagnostics.Debug.Print(dCard);
+                    playerScore = pScore1 + pScore2;
+                    lblTotal.Text = "Score: " + playerScore;
+                    playerCardsCount = 2;
+                }
+                else
+                    MessageBox.Show("The dealer's hand was 21! Game over!", "You lose!");
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
             }
-            else
-                MessageBox.Show("The dealer's hand was 21! Game over!", "You lose!");
         }
 
         private void pStand()

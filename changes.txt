@@ -1,0 +1,15 @@
+# April 29, 2012
+	- Added error handling (try-catch) to the load element
+	- Fixed a bug with some cards not loading for both player and dealer
+
+# April 28, 2012
+	- started development
+	- Added:
+		* Hit
+		* Stand
+		* Dealer
+		* Player
+		* Score counts
+		* Win/Lose conditions
+		* Interface
+		* Other miscellaneous functionality
