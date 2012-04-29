@@ -3,7 +3,7 @@ Blackjack
 
 Author: Ian P (ippavlin)
 
-**Screenshot:** http://i.imgur.com/GfIHa.png
+**Screenshot:** http://i.imgur.com/pqlYv.png
 
 A blackjack game in C#. I'd say it probably took about an hour to get to
 the point it is now (the odd bug, no "Split," but the rest appears to work

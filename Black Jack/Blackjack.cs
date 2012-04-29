@@ -128,6 +128,23 @@ namespace Black_Jack
             try
             {
                 dScore1 = RandomNumber(1, 13);
+                if (dScore1 == 1)
+                    card = "a";
+                else if (dScore1 == 11)
+                {
+                    card = "j";
+                    dScore1 = 10;
+                }
+                else if (dScore1 == 12)
+                {
+                    card = "q";
+                    dScore1 = 10;
+                }
+                else if (dScore1 == 13)
+                {
+                    card = "k";
+                    dScore1 = 10;
+                }
                 dScore2 = RandomNumber(1, 13);
                 rnSuit = RandomNumber(1, 4);
                 dealerScore = dScore1 + dScore2;
@@ -137,11 +154,20 @@ namespace Black_Jack
                 if (dScore2 == 1)
                     card = "a";
                 else if (dScore2 == 11)
+                {
                     card = "j";
+                    dScore2 = 10;
+                }
                 else if (dScore2 == 12)
+                {
                     card = "q";
+                    dScore2 = 10;
+                }
                 else if (dScore2 == 13)
+                {
                     card = "k";
+                    dScore2 = 10;
+                }
                 else
                     card = dScore2.ToString();
 
@@ -163,11 +189,47 @@ namespace Black_Jack
                 if (dealerScore < 21)
                 {
                     DealCard();
-                    pScore1 = rnCard;
+                    if (rnCard == 1)
+                        card = "a";
+                    else if (rnCard == 11)
+                    {
+                        card = "j";
+                        pScore1 = 10;
+                    }
+                    else if (rnCard == 12)
+                    {
+                        card = "q";
+                        pScore1 = 10;
+                    }
+                    else if (rnCard == 13)
+                    {
+                        card = "k";
+                        pScore1 = 10;
+                    }
+                    else
+                        pScore1 = rnCard;
                     playerCard1.Image = Image.FromFile("Content/Cards/" + dCard);
                     System.Diagnostics.Debug.Print(dCard);
                     DealCard();
-                    pScore2 = rnCard;
+                    if (rnCard == 1)
+                        card = "a";
+                    else if (rnCard == 11)
+                    {
+                        card = "j";
+                        pScore2 = 10;
+                    }
+                    else if (rnCard == 12)
+                    {
+                        card = "q";
+                        pScore2 = 10;
+                    }
+                    else if (rnCard == 13)
+                    {
+                        card = "k";
+                        pScore2 = 10;
+                    }
+                    else
+                        pScore2 = rnCard;
                     playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
                     System.Diagnostics.Debug.Print(dCard);
                     playerScore = pScore1 + pScore2;
@@ -175,7 +237,10 @@ namespace Black_Jack
                     playerCardsCount = 2;
                 }
                 else
+                {
                     MessageBox.Show("The dealer's hand was 21! Game over!", "You lose!");
+                    lblDealer.Visible = true;
+                }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -189,11 +254,20 @@ namespace Black_Jack
             if (dScore1 == 1)
                 card = "a";
             else if (dScore1 == 11)
+            {
                 card = "j";
+                dScore1 = 10;
+            }
             else if (dScore1 == 12)
+            {
                 card = "q";
+                dScore1 = 10;
+            }
             else if (dScore1 == 13)
+            {
                 card = "k";
+                dScore1 = 10;
+            }
 
             dealerCard1.Image = Image.FromFile("Content/Cards/diamonds-" + dScore1 + "-75.png");
             if (dealerScore < 17)

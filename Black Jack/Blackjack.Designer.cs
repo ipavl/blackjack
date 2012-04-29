@@ -271,7 +271,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Blackjack";
-            this.Text = "Blackjack by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.2 by Ian P (ippavlin)";
             this.Load += new System.EventHandler(this.Blackjack_Load);
             this.grpOptions.ResumeLayout(false);
             this.grpOptions.PerformLayout();

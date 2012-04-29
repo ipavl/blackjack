@@ -1,8 +1,13 @@
-# April 29, 2012
+# April 29, 2012 - v0.1.2
+	- version number now in title (as it was originally)
+	- fixed a bug where jack/queen/king count as 11/12/13 respectively
+	- on dealer blackjack, dealer score turns visible now
+
+# April 29, 2012 - v0.1.1
 	- Added error handling (try-catch) to the load element
 	- Fixed a bug with some cards not loading for both player and dealer
 
-# April 28, 2012
+# April 28, 2012 - v0.1.0
 	- started development
 	- Added:
 		* Hit
