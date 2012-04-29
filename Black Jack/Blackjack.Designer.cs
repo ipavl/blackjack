@@ -47,6 +47,8 @@
             this.playerCard7 = new System.Windows.Forms.PictureBox();
             this.playerCard8 = new System.Windows.Forms.PictureBox();
             this.playerCard9 = new System.Windows.Forms.PictureBox();
+            this.cmdNewGame = new System.Windows.Forms.Button();
+            this.lblBet = new System.Windows.Forms.Label();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
@@ -65,6 +67,7 @@
             // grpOptions
             // 
             this.grpOptions.BackColor = System.Drawing.Color.Green;
+            this.grpOptions.Controls.Add(this.lblBet);
             this.grpOptions.Controls.Add(this.lblTotal);
             this.grpOptions.Controls.Add(this.cmdStand);
             this.grpOptions.Controls.Add(this.cmdHit);
@@ -80,11 +83,11 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTotal.Location = new System.Drawing.Point(68, 87);
+            this.lblTotal.Location = new System.Drawing.Point(111, 86);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(49, 13);
+            this.lblTotal.Size = new System.Drawing.Size(51, 13);
             this.lblTotal.TabIndex = 6;
-            this.lblTotal.Text = "Total: 21";
+            this.lblTotal.Text = "Total: ##";
             // 
             // cmdStand
             // 
@@ -179,7 +182,7 @@
             this.lblDealer.Name = "lblDealer";
             this.lblDealer.Size = new System.Drawing.Size(131, 24);
             this.lblDealer.TabIndex = 6;
-            this.lblDealer.Text = "Dealer Total: 0";
+            this.lblDealer.Text = "Dealer Total: #";
             // 
             // playerCard3
             // 
@@ -251,12 +254,33 @@
             this.playerCard9.TabStop = false;
             this.playerCard9.Visible = false;
             // 
+            // cmdNewGame
+            // 
+            this.cmdNewGame.Location = new System.Drawing.Point(0, 0);
+            this.cmdNewGame.Name = "cmdNewGame";
+            this.cmdNewGame.Size = new System.Drawing.Size(68, 20);
+            this.cmdNewGame.TabIndex = 14;
+            this.cmdNewGame.Text = "New Game";
+            this.cmdNewGame.UseVisualStyleBackColor = true;
+            this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
+            // 
+            // lblBet
+            // 
+            this.lblBet.AutoSize = true;
+            this.lblBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblBet.Location = new System.Drawing.Point(19, 86);
+            this.lblBet.Name = "lblBet";
+            this.lblBet.Size = new System.Drawing.Size(47, 13);
+            this.lblBet.TabIndex = 7;
+            this.lblBet.Text = "Bet: $$$";
+            // 
             // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(639, 467);
+            this.Controls.Add(this.cmdNewGame);
             this.Controls.Add(this.playerCard9);
             this.Controls.Add(this.playerCard8);
             this.Controls.Add(this.playerCard7);
@@ -271,7 +295,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Blackjack";
-            this.Text = "Blackjack v0.1.2 by Ian P (ippavlin)";
+            this.Text = "Blackjack";
             this.Load += new System.EventHandler(this.Blackjack_Load);
             this.grpOptions.ResumeLayout(false);
             this.grpOptions.PerformLayout();
@@ -312,6 +336,8 @@
         private System.Windows.Forms.PictureBox playerCard8;
         private System.Windows.Forms.PictureBox playerCard9;
         private System.Windows.Forms.Label lblDealerMore;
+        private System.Windows.Forms.Button cmdNewGame;
+        private System.Windows.Forms.Label lblBet;
     }
 }
 

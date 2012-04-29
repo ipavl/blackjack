@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+//using Microsoft.VisualBasic;
 
 namespace Black_Jack
 {
@@ -13,6 +14,7 @@ namespace Black_Jack
     {
         private int playerScore, dealerScore, rnCard, rnSuit, playerCardsCount;
         private int dScore1, dScore2, pScore1, pScore2;
+        //private int bet, cash;
         private string suit, card, dCard;
 
         public Blackjack()
@@ -119,14 +121,59 @@ namespace Black_Jack
                 MessageBox.Show("China or Bust? You just busted.", "Game over");
             else if (playerCardsCount == 10)
                 MessageBox.Show("Shame, you used too many cards. You lost.", "Game over");
+            else if (playerScore == dealerScore)
+                MessageBox.Show("You tied with the dealer.", "Draw");
             else if (dealerScore < playerScore)
                 MessageBox.Show("You won!", "Game over");
+
+            cmdHit.Enabled = false;
+            cmdStand.Enabled = false;
         }
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
+            this.Text = "Blackjack v0.1.3 by Ian P (ippavlin)";
+            StartNewGame();
+        }
+
+        private void StartNewGame()
+        {
             try
             {
+                /*do
+                {
+                    bet = Interaction.InputBox("Enter the amount you wish to bet:", "Enter bet");
+                } while (bet < cash);*/
+
+                cmdHit.Enabled = true;
+                cmdStand.Enabled = true;
+
+                playerCard3.Visible = false;
+                playerCard4.Visible = false;
+                playerCard5.Visible = false;
+                playerCard6.Visible = false;
+                playerCard7.Visible = false;
+                playerCard8.Visible = false;
+                playerCard9.Visible = false;
+
+                lblDealer.Visible = false;
+                lblDealerMore.Visible = false;
+
+                rnCard = 0;
+                rnSuit = 0;
+                playerScore = 0;
+                dealerScore = 0;
+                playerCardsCount = 0;
+
+                dScore1 = 0;
+                dScore2 = 0;
+                pScore1 = 0;
+                pScore2 = 0;
+                
+                suit = null;
+                card = null;
+                dCard = null;
+
                 dScore1 = RandomNumber(1, 13);
                 if (dScore1 == 1)
                     card = "a";
@@ -241,7 +288,9 @@ namespace Black_Jack
                     MessageBox.Show("The dealer's hand was 21! Game over!", "You lose!");
                     lblDealer.Visible = true;
                 }
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -269,7 +318,7 @@ namespace Black_Jack
                 dScore1 = 10;
             }
 
-            dealerCard1.Image = Image.FromFile("Content/Cards/diamonds-" + dScore1 + "-75.png");
+            dealerCard1.Image = Image.FromFile("Content/Cards/diamonds-" + card + "-75.png");
             if (dealerScore < 17)
             {
                 DealCard();
@@ -293,6 +342,11 @@ namespace Black_Jack
             cmdStand.Enabled = false;
             cmdHit.Enabled = false;
             pStand();
+        }
+
+        private void cmdNewGame_Click(object sender, EventArgs e)
+        {
+            StartNewGame();
         }
     }
 }

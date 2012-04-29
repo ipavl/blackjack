@@ -5,13 +5,11 @@ Author: Ian P (ippavlin)
 
 **Screenshot:** http://i.imgur.com/pqlYv.png
 
-A blackjack game in C#. I'd say it probably took about an hour to get to
-the point it is now (the odd bug, no "Split," but the rest appears to work
-fine). The game currently handles Hits and Stands, as well as simulating the
-dealer's hand if the dealer's score is <17. Win/Lose checks are in place. The
-player can only have a total of 9 cards, or else they lose. I'm still working
-on making the UI better looking instead of solid green for the score/option
-panels.
+A blackjack game in C#. The game currently handles Hits and Stands, 
+as well as simulating the dealer's hand if the dealer's score is <17. 
+Win/Lose checks are in place. The player can only have a total of 9 cards, 
+or else they lose. I'm still working on making the UI better looking instead 
+of solid green for the score/option panels.
 
 CREDITS
 
