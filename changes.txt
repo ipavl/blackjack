@@ -1,3 +1,6 @@
+# April 29, 2012 - v0.1.3_02
+	- lblDealerMore is now reset to "+" on new game to prevent numbers from previous rounds appearing
+
 # April 29, 2012 - v0.1.3_01
 	- DealCard also no longer treats J/K/Q as 11/12/13 (respectively)
 

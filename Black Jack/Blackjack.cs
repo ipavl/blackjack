@@ -141,7 +141,7 @@ namespace Black_Jack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.3_01 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.3_02 by Ian P (ippavlin)";
             StartNewGame();
         }
 
@@ -165,6 +165,7 @@ namespace Black_Jack
                 playerCard8.Visible = false;
                 playerCard9.Visible = false;
 
+                lblDealerMore.Text = "+";
                 lblDealer.Visible = false;
                 lblDealerMore.Visible = false;
 
