@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Black_Jack
+namespace Blackjack
 {
     static class Program
     {

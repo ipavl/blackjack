@@ -1,4 +1,4 @@
-﻿namespace Black_Jack
+﻿namespace Blackjack
 {
     partial class Blackjack
     {
@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Blackjack));
             this.grpOptions = new System.Windows.Forms.GroupBox();
+            this.lblBet = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.cmdStand = new System.Windows.Forms.Button();
             this.cmdHit = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.playerCard8 = new System.Windows.Forms.PictureBox();
             this.playerCard9 = new System.Windows.Forms.PictureBox();
             this.cmdNewGame = new System.Windows.Forms.Button();
-            this.lblBet = new System.Windows.Forms.Label();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
@@ -74,16 +74,26 @@
             this.grpOptions.ForeColor = System.Drawing.Color.Lime;
             this.grpOptions.Location = new System.Drawing.Point(322, 322);
             this.grpOptions.Name = "grpOptions";
-            this.grpOptions.Size = new System.Drawing.Size(184, 107);
+            this.grpOptions.Size = new System.Drawing.Size(223, 107);
             this.grpOptions.TabIndex = 4;
             this.grpOptions.TabStop = false;
             this.grpOptions.Text = "Options";
+            // 
+            // lblBet
+            // 
+            this.lblBet.AutoSize = true;
+            this.lblBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblBet.Location = new System.Drawing.Point(6, 86);
+            this.lblBet.Name = "lblBet";
+            this.lblBet.Size = new System.Drawing.Size(47, 13);
+            this.lblBet.TabIndex = 7;
+            this.lblBet.Text = "Bet: $$$";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTotal.Location = new System.Drawing.Point(111, 86);
+            this.lblTotal.Location = new System.Drawing.Point(166, 86);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(51, 13);
             this.lblTotal.TabIndex = 6;
@@ -94,7 +104,7 @@
             this.cmdStand.ForeColor = System.Drawing.Color.Black;
             this.cmdStand.Location = new System.Drawing.Point(22, 54);
             this.cmdStand.Name = "cmdStand";
-            this.cmdStand.Size = new System.Drawing.Size(140, 29);
+            this.cmdStand.Size = new System.Drawing.Size(175, 29);
             this.cmdStand.TabIndex = 5;
             this.cmdStand.Text = "I\'ll &Stand";
             this.cmdStand.UseVisualStyleBackColor = true;
@@ -105,7 +115,7 @@
             this.cmdHit.ForeColor = System.Drawing.Color.Black;
             this.cmdHit.Location = new System.Drawing.Point(22, 19);
             this.cmdHit.Name = "cmdHit";
-            this.cmdHit.Size = new System.Drawing.Size(140, 29);
+            this.cmdHit.Size = new System.Drawing.Size(175, 29);
             this.cmdHit.TabIndex = 4;
             this.cmdHit.Text = "&Hit Me!";
             this.cmdHit.UseVisualStyleBackColor = true;
@@ -263,16 +273,6 @@
             this.cmdNewGame.Text = "New Game";
             this.cmdNewGame.UseVisualStyleBackColor = true;
             this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
-            // 
-            // lblBet
-            // 
-            this.lblBet.AutoSize = true;
-            this.lblBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblBet.Location = new System.Drawing.Point(19, 86);
-            this.lblBet.Name = "lblBet";
-            this.lblBet.Size = new System.Drawing.Size(47, 13);
-            this.lblBet.TabIndex = 7;
-            this.lblBet.Text = "Bet: $$$";
             // 
             // Blackjack
             // 
