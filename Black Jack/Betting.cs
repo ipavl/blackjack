@@ -37,8 +37,11 @@ namespace Blackjack
         {
             Bet = numBet.Value;
             if (Balance == 0)
-                MessageBox.Show(null, "Sorry, you are out of money to bet with!", "Welcome to Vegas", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            {
+                MessageBox.Show(null, "Sorry, you are out of money to bet with!", 
+                    "Say Good-bye to Vegas!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.Exit();
+            }
             else if (Bet > Balance)
                 MessageBox.Show("Sorry, you do not have $" + Bet + " to bet. " +
                    "Please choose a lower amount.", "Bet too high");
