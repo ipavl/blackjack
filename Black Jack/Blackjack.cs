@@ -203,6 +203,12 @@ namespace Blackjack
 
         private void GameOver(string Condition)
         {
+            bool playerWon = false;
+            bool isDraw = false;
+            lblDealer.Visible = true;
+            cmdHit.Enabled = false;
+            cmdStand.Enabled = false;
+
             if (Condition == "playerBust")
                 MessageBox.Show("China or Bust? You just busted.", "Loss");
             else if (Condition == "dealer21")
@@ -211,16 +217,34 @@ namespace Blackjack
                 MessageBox.Show("Shame, the dealer's hand was higher than yours.", "Loss");
             else if (Condition == "tooManyCards")
                 MessageBox.Show("Shame, you used too many cards. You lost.", "Loss");
-            else if (Condition == "draw")
-                MessageBox.Show("You tied with the dealer.", "Draw");
             else if (Condition == "win")
+            {
                 MessageBox.Show("Your hand is higher than the dealer's. You win!", "Win");
+                playerWon = true;
+            }
             else if (Condition == "dealerBust")
+            {
                 MessageBox.Show("The dealer busted. You win!", "Win");
+                playerWon = true;
+            }
+            else if (Condition == "draw")
+            {
+                MessageBox.Show("You tied with the dealer.", "Draw");
+                isDraw = true;
+            }
 
-            lblDealer.Visible = true;
-            cmdHit.Enabled = false;
-            cmdStand.Enabled = false;
+            // Player won
+            if (playerWon == true)
+            {
+                // Give the player their bet back plus 0.5x it (can't use * 1.5 here)
+                Betting.Balance += (Betting.Bet * (3 / 2));
+            }
+            // Draw
+            if (isDraw == true)
+            {
+                // Give the player their bet back
+                Betting.Balance += Betting.Bet;
+            }
         }
 
         private void DealCard()

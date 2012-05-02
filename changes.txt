@@ -1,3 +1,8 @@
+# May 1, 2012 - v0.1.5
+	- panels, image boxes, and labels now have transparent backgrounds
+	- added win/draw "give bet back" condition to GameOver
+	- removed 'x' button from betting form to fix a "hack" (the interface now has rounded corners!)
+
 # April 30, 2012 - v0.1.4
 	- added betting interface
 	- cleaned up a lot of repeated code by passing variables to a void to handle card filename/values

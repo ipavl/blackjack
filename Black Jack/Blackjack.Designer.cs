@@ -66,13 +66,13 @@
             // 
             // grpOptions
             // 
-            this.grpOptions.BackColor = System.Drawing.Color.Green;
+            this.grpOptions.BackColor = System.Drawing.Color.Transparent;
             this.grpOptions.Controls.Add(this.lblBet);
             this.grpOptions.Controls.Add(this.lblTotal);
             this.grpOptions.Controls.Add(this.cmdStand);
             this.grpOptions.Controls.Add(this.cmdHit);
             this.grpOptions.ForeColor = System.Drawing.Color.Lime;
-            this.grpOptions.Location = new System.Drawing.Point(322, 322);
+            this.grpOptions.Location = new System.Drawing.Point(303, 322);
             this.grpOptions.Name = "grpOptions";
             this.grpOptions.Size = new System.Drawing.Size(223, 107);
             this.grpOptions.TabIndex = 4;
@@ -82,6 +82,7 @@
             // lblBet
             // 
             this.lblBet.AutoSize = true;
+            this.lblBet.BackColor = System.Drawing.Color.Transparent;
             this.lblBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblBet.Location = new System.Drawing.Point(6, 86);
             this.lblBet.Name = "lblBet";
@@ -92,6 +93,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.lblTotal.Location = new System.Drawing.Point(166, 86);
             this.lblTotal.Name = "lblTotal";
@@ -123,8 +125,8 @@
             // 
             // playerCard1
             // 
-            this.playerCard1.BackColor = System.Drawing.Color.Green;
-            this.playerCard1.Location = new System.Drawing.Point(132, 322);
+            this.playerCard1.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard1.Location = new System.Drawing.Point(113, 322);
             this.playerCard1.Name = "playerCard1";
             this.playerCard1.Size = new System.Drawing.Size(75, 107);
             this.playerCard1.TabIndex = 0;
@@ -132,8 +134,8 @@
             // 
             // playerCard2
             // 
-            this.playerCard2.BackColor = System.Drawing.Color.Green;
-            this.playerCard2.Location = new System.Drawing.Point(224, 322);
+            this.playerCard2.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard2.Location = new System.Drawing.Point(205, 322);
             this.playerCard2.Name = "playerCard2";
             this.playerCard2.Size = new System.Drawing.Size(75, 107);
             this.playerCard2.TabIndex = 5;
@@ -141,7 +143,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.DarkGreen;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.lblDealerMore);
             this.groupBox1.Controls.Add(this.dealerCard2);
             this.groupBox1.Controls.Add(this.dealerCard1);
@@ -157,9 +159,10 @@
             // lblDealerMore
             // 
             this.lblDealerMore.AutoSize = true;
+            this.lblDealerMore.BackColor = System.Drawing.Color.Transparent;
             this.lblDealerMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDealerMore.ForeColor = System.Drawing.Color.Yellow;
-            this.lblDealerMore.Location = new System.Drawing.Point(208, 97);
+            this.lblDealerMore.Location = new System.Drawing.Point(203, 97);
             this.lblDealerMore.Name = "lblDealerMore";
             this.lblDealerMore.Size = new System.Drawing.Size(21, 24);
             this.lblDealerMore.TabIndex = 9;
@@ -168,8 +171,8 @@
             // 
             // dealerCard2
             // 
-            this.dealerCard2.BackColor = System.Drawing.Color.YellowGreen;
-            this.dealerCard2.Location = new System.Drawing.Point(124, 14);
+            this.dealerCard2.BackColor = System.Drawing.Color.Transparent;
+            this.dealerCard2.Location = new System.Drawing.Point(116, 14);
             this.dealerCard2.Name = "dealerCard2";
             this.dealerCard2.Size = new System.Drawing.Size(75, 107);
             this.dealerCard2.TabIndex = 8;
@@ -177,8 +180,8 @@
             // 
             // dealerCard1
             // 
-            this.dealerCard1.BackColor = System.Drawing.Color.YellowGreen;
-            this.dealerCard1.Location = new System.Drawing.Point(43, 14);
+            this.dealerCard1.BackColor = System.Drawing.Color.Transparent;
+            this.dealerCard1.Location = new System.Drawing.Point(35, 14);
             this.dealerCard1.Name = "dealerCard1";
             this.dealerCard1.Size = new System.Drawing.Size(75, 107);
             this.dealerCard1.TabIndex = 7;
@@ -187,16 +190,17 @@
             // lblDealer
             // 
             this.lblDealer.AutoSize = true;
-            this.lblDealer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDealer.Location = new System.Drawing.Point(221, 54);
+            this.lblDealer.BackColor = System.Drawing.Color.Transparent;
+            this.lblDealer.Font = new System.Drawing.Font("Pescadero", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDealer.Location = new System.Drawing.Point(203, 52);
             this.lblDealer.Name = "lblDealer";
-            this.lblDealer.Size = new System.Drawing.Size(131, 24);
+            this.lblDealer.Size = new System.Drawing.Size(136, 23);
             this.lblDealer.TabIndex = 6;
             this.lblDealer.Text = "Dealer Total: #";
             // 
             // playerCard3
             // 
-            this.playerCard3.BackColor = System.Drawing.Color.Green;
+            this.playerCard3.BackColor = System.Drawing.Color.Transparent;
             this.playerCard3.Location = new System.Drawing.Point(39, 195);
             this.playerCard3.Name = "playerCard3";
             this.playerCard3.Size = new System.Drawing.Size(75, 107);
@@ -206,7 +210,7 @@
             // 
             // playerCard4
             // 
-            this.playerCard4.BackColor = System.Drawing.Color.Green;
+            this.playerCard4.BackColor = System.Drawing.Color.Transparent;
             this.playerCard4.Location = new System.Drawing.Point(120, 195);
             this.playerCard4.Name = "playerCard4";
             this.playerCard4.Size = new System.Drawing.Size(75, 107);
@@ -216,7 +220,7 @@
             // 
             // playerCard5
             // 
-            this.playerCard5.BackColor = System.Drawing.Color.Green;
+            this.playerCard5.BackColor = System.Drawing.Color.Transparent;
             this.playerCard5.Location = new System.Drawing.Point(201, 195);
             this.playerCard5.Name = "playerCard5";
             this.playerCard5.Size = new System.Drawing.Size(75, 107);
@@ -226,7 +230,7 @@
             // 
             // playerCard6
             // 
-            this.playerCard6.BackColor = System.Drawing.Color.Green;
+            this.playerCard6.BackColor = System.Drawing.Color.Transparent;
             this.playerCard6.Location = new System.Drawing.Point(282, 195);
             this.playerCard6.Name = "playerCard6";
             this.playerCard6.Size = new System.Drawing.Size(75, 107);
@@ -236,7 +240,7 @@
             // 
             // playerCard7
             // 
-            this.playerCard7.BackColor = System.Drawing.Color.Green;
+            this.playerCard7.BackColor = System.Drawing.Color.Transparent;
             this.playerCard7.Location = new System.Drawing.Point(363, 195);
             this.playerCard7.Name = "playerCard7";
             this.playerCard7.Size = new System.Drawing.Size(75, 107);
@@ -246,7 +250,7 @@
             // 
             // playerCard8
             // 
-            this.playerCard8.BackColor = System.Drawing.Color.Green;
+            this.playerCard8.BackColor = System.Drawing.Color.Transparent;
             this.playerCard8.Location = new System.Drawing.Point(444, 195);
             this.playerCard8.Name = "playerCard8";
             this.playerCard8.Size = new System.Drawing.Size(75, 107);
@@ -256,7 +260,7 @@
             // 
             // playerCard9
             // 
-            this.playerCard9.BackColor = System.Drawing.Color.Green;
+            this.playerCard9.BackColor = System.Drawing.Color.Transparent;
             this.playerCard9.Location = new System.Drawing.Point(525, 195);
             this.playerCard9.Name = "playerCard9";
             this.playerCard9.Size = new System.Drawing.Size(75, 107);
