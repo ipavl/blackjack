@@ -49,6 +49,7 @@
             this.playerCard8 = new System.Windows.Forms.PictureBox();
             this.playerCard9 = new System.Windows.Forms.PictureBox();
             this.cmdNewGame = new System.Windows.Forms.Button();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
@@ -67,6 +68,7 @@
             // grpOptions
             // 
             this.grpOptions.BackColor = System.Drawing.Color.Transparent;
+            this.grpOptions.Controls.Add(this.lblBalance);
             this.grpOptions.Controls.Add(this.lblBet);
             this.grpOptions.Controls.Add(this.lblTotal);
             this.grpOptions.Controls.Add(this.cmdStand);
@@ -278,6 +280,17 @@
             this.cmdNewGame.UseVisualStyleBackColor = true;
             this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
             // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.BackColor = System.Drawing.Color.Transparent;
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblBalance.Location = new System.Drawing.Point(76, 86);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(70, 13);
+            this.lblBalance.TabIndex = 8;
+            this.lblBalance.Text = "Balance: $$$";
+            // 
             // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +355,7 @@
         private System.Windows.Forms.Label lblDealerMore;
         private System.Windows.Forms.Button cmdNewGame;
         private System.Windows.Forms.Label lblBet;
+        private System.Windows.Forms.Label lblBalance;
     }
 }
 

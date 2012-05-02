@@ -32,12 +32,6 @@ namespace Blackjack
             DealPlayerCard();
         }
 
-        private void Blackjack_Load(object sender, EventArgs e)
-        {
-            this.Text = "Blackjack v0.1.5_01 by Ian P (ippavlin)";
-            StartNewGame();
-        }
-
         private void cmdNewGame_Click(object sender, EventArgs e)
         {
             StartNewGame();
@@ -60,7 +54,8 @@ namespace Blackjack
                 bettingForm.ShowDialog();
 
                 // Set betting labels
-                lblBet.Text = "Bet: $" + Betting.Bet + "         Balance: $" + Betting.Balance;
+                lblBet.Text = "Bet: $" + Betting.Bet.ToString("#0.00");
+                lblBalance.Text = "Balance: $" + Betting.Balance.ToString("#0.00");
 
                 // Reset controls/variables for new round
                 cmdHit.Enabled = true;
@@ -217,7 +212,7 @@ namespace Blackjack
                 MessageBox.Show("Shame, the dealer's hand was higher than yours.", "Loss");
             else if (Condition == "tooManyCards")
                 MessageBox.Show("Shame, you used too many cards. You lost.", "Loss");
-            else if (Condition == "win")
+            else if (Condition == "playerWins")
             {
                 MessageBox.Show("Your hand is higher than the dealer's. You win!", "Win");
                 playerWon = true;
@@ -237,7 +232,7 @@ namespace Blackjack
             if (playerWon == true)
             {
                 // Give the player their bet back plus 0.5x it (can't use * 1.5 here)
-                Betting.Balance += (Betting.Bet * (3 / 2));
+                Betting.Balance += (Betting.Bet * 3 / 2);
             }
             // Draw
             if (isDraw == true)
@@ -277,10 +272,12 @@ namespace Blackjack
                 lblDealerMore.Visible = true;
                 Stand();
             }
-            else if (dealerScore > 17 && dealerScore <= 21)
+            else if (dealerScore > 17 && dealerScore <= 21 && dealerScore > playerScore)
                 GameOver("dealerWins");
             else if (dealerScore > 21)
                 GameOver("dealerBust");
+            else if (playerScore > dealerScore)
+                GameOver("playerWins");
         }
 
         private int RandomNumber(int min, int max)
@@ -329,6 +326,12 @@ namespace Blackjack
             return suit;
         }
         #endregion
+
+        private void Blackjack_Load(object sender, EventArgs e)
+        {
+            this.Text = "Blackjack v0.1.5_02 by Ian P (ippavlin)";
+            StartNewGame();
+        }
 
         public Blackjack()
         {

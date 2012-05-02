@@ -1,9 +1,17 @@
+# May 1, 2012 - v0.1.5_02
+	- added a check for Dealer > Player to "dealerWins"
+	- added a check for "playerWins" to Stand()
+	- bet/balance totals are now properly formatted for decimal values
+
 # May 1, 2012 - v0.1.5_01
 	- due to not being able to close the program when balance = 0, the betting form now closes it
 
 # May 1, 2012 - v0.1.5
 	- panels, image boxes, and labels now have transparent backgrounds
-	- added win/draw "give bet back" condition to GameOver
+	- added win/draw "give money" condition to GameOver
+		- win gives the player 1.5x their bet back
+		- draw gives the player their bet back
+		- loss gives the player nothing back
 	- removed 'x' button from betting form to fix a "hack" (the interface now has rounded corners!)
 
 # April 30, 2012 - v0.1.4

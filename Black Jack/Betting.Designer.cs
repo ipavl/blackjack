@@ -71,11 +71,11 @@
             // 
             this.lblBalance.AutoSize = true;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(47, 10);
+            this.lblBalance.Location = new System.Drawing.Point(34, 10);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(89, 13);
+            this.lblBalance.Size = new System.Drawing.Size(107, 13);
             this.lblBalance.TabIndex = 2;
-            this.lblBalance.Text = "Balance: $500";
+            this.lblBalance.Text = "Balance: $500.00";
             // 
             // cmdBet
             // 
