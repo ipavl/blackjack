@@ -34,7 +34,7 @@ namespace Blackjack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.4 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.5 by Ian P (ippavlin)";
             StartNewGame();
         }
 
