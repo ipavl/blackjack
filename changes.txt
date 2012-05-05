@@ -1,4 +1,15 @@
 * TODO: Implement aces acting as both 1 and 11.
+		Implement "all in if can't afford to double down" instead of "You cannot afford to double-down"
+
+# May 4, 2012 - v0.1.7
+	- added the ability to surrender a match
+		- "New Game" button is now labelled "Surrender" if the game is in progress
+		- clicking "Surrender" will give the player 50% of their bet back
+	- added Double Down/Split buttons to form
+	- implemented Double Down
+		- bet x2, can only receive one card
+	- began implementing Splitting
+		- button is enabled if player is dealt two of the same cards (value-wise)
 
 # May 4, 2012 - v0.1.6
 	- fixed a bug where the dealer's first card would look for "<suit> -<card>" instead of "<suit>-<card>"

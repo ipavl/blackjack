@@ -3,7 +3,7 @@ Blackjack
 
 Author: Ian P (ippavlin)
 
-**Screenshot:** http://i.imgur.com/HsNqU.png
+**Screenshot:** http://i.imgur.com/HsNqU.png (older version)
 
 A blackjack game in C#. The game currently handles Hits and Stands, 
 as well as simulating the dealer's hand if the dealer's score is <17. 

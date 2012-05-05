@@ -50,6 +50,8 @@
             this.playerCard8 = new System.Windows.Forms.PictureBox();
             this.playerCard9 = new System.Windows.Forms.PictureBox();
             this.cmdNewGame = new System.Windows.Forms.Button();
+            this.cmdDoubleDown = new System.Windows.Forms.Button();
+            this.cmdSplit = new System.Windows.Forms.Button();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
@@ -68,6 +70,8 @@
             // grpOptions
             // 
             this.grpOptions.BackColor = System.Drawing.Color.Transparent;
+            this.grpOptions.Controls.Add(this.cmdSplit);
+            this.grpOptions.Controls.Add(this.cmdDoubleDown);
             this.grpOptions.Controls.Add(this.lblBalance);
             this.grpOptions.Controls.Add(this.lblBet);
             this.grpOptions.Controls.Add(this.lblTotal);
@@ -117,11 +121,11 @@
             // cmdStand
             // 
             this.cmdStand.ForeColor = System.Drawing.Color.Black;
-            this.cmdStand.Location = new System.Drawing.Point(22, 54);
+            this.cmdStand.Location = new System.Drawing.Point(118, 19);
             this.cmdStand.Name = "cmdStand";
-            this.cmdStand.Size = new System.Drawing.Size(175, 29);
+            this.cmdStand.Size = new System.Drawing.Size(85, 29);
             this.cmdStand.TabIndex = 5;
-            this.cmdStand.Text = "I\'ll &Stand";
+            this.cmdStand.Text = "&Stand";
             this.cmdStand.UseVisualStyleBackColor = true;
             this.cmdStand.Click += new System.EventHandler(this.cmdStand_Click);
             // 
@@ -130,9 +134,9 @@
             this.cmdHit.ForeColor = System.Drawing.Color.Black;
             this.cmdHit.Location = new System.Drawing.Point(22, 19);
             this.cmdHit.Name = "cmdHit";
-            this.cmdHit.Size = new System.Drawing.Size(175, 29);
+            this.cmdHit.Size = new System.Drawing.Size(85, 29);
             this.cmdHit.TabIndex = 4;
-            this.cmdHit.Text = "&Hit Me!";
+            this.cmdHit.Text = "&Hit";
             this.cmdHit.UseVisualStyleBackColor = true;
             this.cmdHit.Click += new System.EventHandler(this.cmdHit_Click);
             // 
@@ -287,9 +291,31 @@
             this.cmdNewGame.Name = "cmdNewGame";
             this.cmdNewGame.Size = new System.Drawing.Size(68, 20);
             this.cmdNewGame.TabIndex = 14;
-            this.cmdNewGame.Text = "New Game";
+            this.cmdNewGame.Text = "Surrender";
             this.cmdNewGame.UseVisualStyleBackColor = true;
             this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
+            // 
+            // cmdDoubleDown
+            // 
+            this.cmdDoubleDown.ForeColor = System.Drawing.Color.Black;
+            this.cmdDoubleDown.Location = new System.Drawing.Point(22, 54);
+            this.cmdDoubleDown.Name = "cmdDoubleDown";
+            this.cmdDoubleDown.Size = new System.Drawing.Size(85, 29);
+            this.cmdDoubleDown.TabIndex = 9;
+            this.cmdDoubleDown.Text = "&Double";
+            this.cmdDoubleDown.UseVisualStyleBackColor = true;
+            this.cmdDoubleDown.Click += new System.EventHandler(this.cmdDoubleDown_Click);
+            // 
+            // cmdSplit
+            // 
+            this.cmdSplit.Enabled = false;
+            this.cmdSplit.ForeColor = System.Drawing.Color.Black;
+            this.cmdSplit.Location = new System.Drawing.Point(118, 54);
+            this.cmdSplit.Name = "cmdSplit";
+            this.cmdSplit.Size = new System.Drawing.Size(85, 29);
+            this.cmdSplit.TabIndex = 10;
+            this.cmdSplit.Text = "S&plit";
+            this.cmdSplit.UseVisualStyleBackColor = true;
             // 
             // Blackjack
             // 
@@ -356,6 +382,8 @@
         private System.Windows.Forms.Button cmdNewGame;
         private System.Windows.Forms.Label lblBet;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Button cmdSplit;
+        private System.Windows.Forms.Button cmdDoubleDown;
     }
 }
 

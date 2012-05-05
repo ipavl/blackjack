@@ -25,6 +25,7 @@ namespace Blackjack
         private int playerScore, dealerScore, rnCard, rnSuit, playerCardsCount, cardValue;
         private int dScore1, dScore2, pScore1, pScore2;
         private string suit, card, dCard;
+        private bool isGameOver;
         #endregion
 
         #region "Controls"
@@ -35,12 +36,32 @@ namespace Blackjack
 
         private void cmdNewGame_Click(object sender, EventArgs e)
         {
-            StartNewGame();
+            if (isGameOver)
+                StartNewGame();
+            else
+            {
+                // Surrender
+                DialogResult dialogResult = MessageBox.Show(null, "Are you sure you " +
+                    "want to surrender? You will receive half of your bet back and this " +
+                    "round will count as a loss.", "Surrender?", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Give the player half their bet back
+                    Betting.Balance += (Betting.Bet / 2);
+                    StartNewGame();
+                }
+            }
         }
 
         private void cmdStand_Click(object sender, EventArgs e)
         {
             Stand();
+        }
+
+        private void cmdDoubleDown_Click(object sender, EventArgs e)
+        {
+            DoubleDown();
         }
         #endregion
 
@@ -61,6 +82,11 @@ namespace Blackjack
                 // Reset controls/variables for new round
                 cmdHit.Enabled = true;
                 cmdStand.Enabled = true;
+                cmdDoubleDown.Enabled = true;
+                cmdSplit.Enabled = false;
+
+                isGameOver = false;
+                cmdNewGame.Text = "Surrender";
 
                 playerCard3.Visible = false;
                 playerCard4.Visible = false;
@@ -139,6 +165,12 @@ namespace Blackjack
                     playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
                     Debug.Print("Player card 2: " + dCard);
 
+                    // Split
+                    if (pScore1 == pScore2)
+                    {
+                        cmdSplit.Enabled = true;
+                    }
+
                     // Get player score and display it
                     playerScore = pScore1 + pScore2;
                     lblTotal.Text = "Score: " + playerScore;
@@ -153,10 +185,24 @@ namespace Blackjack
             }
         }
 
+        private void DealCard()
+        {
+            rnCard = RandomNumber(1, 13);
+            Debug.Print("DealCard (rnCard): " + rnCard.ToString());
+            ConvertFaceCardToFileName(rnCard);
+            Debug.Print("DealCard (rnCard->Face): " + card);
+            ConvertFaceCardToNumberValue(rnCard);
+            Debug.Print("DealCard (rnCard->Num): " + cardValue);
+            SelectSuit();
+            dCard = suit + "-" + card + "-75.png";
+            Debug.Print("DealCard (dCard): " + dCard);
+        }
+
         private void DealPlayerCard()
         {
             DealCard();
             playerCardsCount++;
+            cmdDoubleDown.Enabled = false;
 
             if (playerCardsCount == 3)
             {
@@ -206,13 +252,81 @@ namespace Blackjack
 
         }
 
+        private void Stand()
+        {
+            // Disable player controls
+            cmdStand.Enabled = false;
+            cmdHit.Enabled = false;
+            // Show dealer score
+            lblDealer.Visible = true;
+            lblDealer.Text = "Dealer score: " + dealerScore;
+
+            ConvertFaceCardToNumberValue(dScore1);
+            dScore1 = cardValue;
+            ConvertFaceCardToFileName(dScore1);
+            SelectSuit();
+
+            dealerCard1.Image = Image.FromFile("Content/Cards/" + suit +
+                "-" + card + "-75.png");
+            if (dealerScore < 17)
+            {
+                DealCard();
+                dealerScore = dealerScore + rnCard;
+                lblDealerMore.Text = lblDealerMore.Text + " " + rnCard;
+                lblDealerMore.Visible = true;
+                Stand();
+            }
+            else if (dealerScore > 17 && dealerScore <= 21 && dealerScore > playerScore)
+                GameOver("dealerWins");
+            else if (dealerScore > 21)
+                GameOver("dealerBust");
+            else if (playerScore > dealerScore)
+                GameOver("playerWins");
+            else if (playerScore == dealerScore)
+                GameOver("draw");
+        }
+
+        private void DoubleDown()
+        {
+            if (playerCardsCount == 2)
+            {
+                // TODO: Implement "all in if can't afford" here instead
+                if (Betting.Bet < Betting.Balance)
+                {
+                    // Take another "bet" of the same amount from the player
+                    Betting.Balance -= Betting.Bet;
+                    // Double the player's bet
+                    Betting.Bet *= 2;
+                    // Set betting labels
+                    lblBet.Text = "Bet: $" + Betting.Bet.ToString("#0.00");
+                    lblBalance.Text = "Balance: $" + Betting.Balance.ToString("#0.00");
+                    // Deal the player a card
+                    DealPlayerCard();
+                    // Force the player to stand
+                    Stand();
+                    // Disable double-down button
+                    cmdDoubleDown.Enabled = false;
+                }
+                else
+                    MessageBox.Show("You cannot afford to double-down.", "Blackjack");
+            }
+            else
+                MessageBox.Show("You cannot double-down with more than 2 cards.", "Blackjack");
+        }
+
         private void GameOver(string Condition)
         {
             bool playerWon = false;
             bool isDraw = false;
+
             lblDealer.Visible = true;
             cmdHit.Enabled = false;
             cmdStand.Enabled = false;
+            cmdDoubleDown.Enabled = false;
+            cmdSplit.Enabled = false;
+
+            isGameOver = true;
+            cmdNewGame.Text = "New Game";
 
             // Convert number value to letter for file name purposes
             ConvertFaceCardToFileName(dScore1);
@@ -257,53 +371,6 @@ namespace Blackjack
                 // Give the player their bet back
                 Betting.Balance += Betting.Bet;
             }
-        }
-
-        private void DealCard()
-        {
-            rnCard = RandomNumber(1, 13);
-            Debug.Print("DealCard (rnCard): " + rnCard.ToString());
-            ConvertFaceCardToFileName(rnCard);
-            Debug.Print("DealCard (rnCard->Face): " + card);
-            ConvertFaceCardToNumberValue(rnCard);
-            Debug.Print("DealCard (rnCard->Num): " + cardValue);
-            SelectSuit();
-            dCard = suit + "-" + card + "-75.png";
-            Debug.Print("DealCard (dCard): " + dCard);
-        }
-
-        private void Stand()
-        {
-            // Disable player controls
-            cmdStand.Enabled = false;
-            cmdHit.Enabled = false;
-            // Show dealer score
-            lblDealer.Visible = true;
-            lblDealer.Text = "Dealer score: " + dealerScore;
-
-            ConvertFaceCardToNumberValue(dScore1);
-            dScore1 = cardValue;
-            ConvertFaceCardToFileName(dScore1);
-            SelectSuit();
-
-            dealerCard1.Image = Image.FromFile("Content/Cards/" + suit + 
-                "-" + card + "-75.png");
-            if (dealerScore < 17)
-            {
-                DealCard();
-                dealerScore = dealerScore + rnCard;
-                lblDealerMore.Text = lblDealerMore.Text + " " + rnCard;
-                lblDealerMore.Visible = true;
-                Stand();
-            }
-            else if (dealerScore > 17 && dealerScore <= 21 && dealerScore > playerScore)
-                GameOver("dealerWins");
-            else if (dealerScore > 21)
-                GameOver("dealerBust");
-            else if (playerScore > dealerScore)
-                GameOver("playerWins");
-            else if (playerScore == dealerScore)
-                GameOver("draw");
         }
 
         private int RandomNumber(int min, int max)
@@ -359,7 +426,7 @@ namespace Blackjack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.6 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.7 by Ian P (ippavlin)";
             StartNewGame();
         }
 
