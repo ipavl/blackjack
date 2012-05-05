@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Blackjack));
             this.grpOptions = new System.Windows.Forms.GroupBox();
+            this.lblBalance = new System.Windows.Forms.Label();
             this.lblBet = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.cmdStand = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.playerCard8 = new System.Windows.Forms.PictureBox();
             this.playerCard9 = new System.Windows.Forms.PictureBox();
             this.cmdNewGame = new System.Windows.Forms.Button();
-            this.lblBalance = new System.Windows.Forms.Label();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
@@ -80,6 +80,17 @@
             this.grpOptions.TabIndex = 4;
             this.grpOptions.TabStop = false;
             this.grpOptions.Text = "Options";
+            // 
+            // lblBalance
+            // 
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.BackColor = System.Drawing.Color.Transparent;
+            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblBalance.Location = new System.Drawing.Point(76, 86);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(70, 13);
+            this.lblBalance.TabIndex = 8;
+            this.lblBalance.Text = "Balance: $$$";
             // 
             // lblBet
             // 
@@ -279,17 +290,6 @@
             this.cmdNewGame.Text = "New Game";
             this.cmdNewGame.UseVisualStyleBackColor = true;
             this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
-            // 
-            // lblBalance
-            // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.BackColor = System.Drawing.Color.Transparent;
-            this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblBalance.Location = new System.Drawing.Point(76, 86);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(70, 13);
-            this.lblBalance.TabIndex = 8;
-            this.lblBalance.Text = "Balance: $$$";
             // 
             // Blackjack
             // 

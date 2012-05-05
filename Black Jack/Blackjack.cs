@@ -15,13 +15,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Blackjack
 {
     public partial class Blackjack : Form
     {
         #region "Variables"
-        private int playerScore, dealerScore, rnCard, rnSuit, playerCardsCount;
+        private int playerScore, dealerScore, rnCard, rnSuit, playerCardsCount, cardValue;
         private int dScore1, dScore2, pScore1, pScore2;
         private string suit, card, dCard;
         #endregion
@@ -90,23 +91,28 @@ namespace Blackjack
 
                 // Deal dealer card 1
                 dScore1 = RandomNumber(1, 13);
+                Debug.Print("Dealer card 1: " + dScore1.ToString());
                 // Convert any face cards to appropriate number values
                 ConvertFaceCardToNumberValue(dScore1);
+                Debug.Print("dScore1 -> Num: " + dScore1);
                 // Deal dealer card 2
                 dScore2 = RandomNumber(1, 13);
+                Debug.Print("Dealer card 2: " + dScore2.ToString());
+                // Convert any face cards to appropriate number values
+                ConvertFaceCardToNumberValue(dScore2);
+                ConvertFaceCardToFileName(dScore2);
+                Debug.Print("dScore2 -> Num: " + dScore2);
                 // Calculate dealer total
                 dealerScore = dScore1 + dScore2;
 
                 // Show dealer card 1 (backside of card)
                 dealerCard1.Image = Image.FromFile("Content/Cards/back-red-75-2.png");
 
-                // Convert any face cards to appropriate file names/number values
-                ConvertFaceCardToNumberValue(dScore2);
                 // Choose a random suit
                 SelectSuit();
                 // Show the dealer's second card
                 dealerCard2.Image = Image.FromFile("Content/Cards/" + suit + "-" + card + "-75.png");
-                System.Diagnostics.Debug.Print("Dealer:" + dealerScore);
+                Debug.Print("dealerScore: " + dealerScore);
                 // Hide dealer's score
                 lblDealer.Visible = false;
                 // Set label to show dealer's score
@@ -120,14 +126,14 @@ namespace Blackjack
                     pScore1 = rnCard;
                     ConvertFaceCardToNumberValue(pScore1);
                     playerCard1.Image = Image.FromFile("Content/Cards/" + dCard);
-                    System.Diagnostics.Debug.Print(dCard);
+                    Debug.Print("Player card 1: " + dCard);
 
                     // Deal player card 2
                     DealCard();
                     pScore2 = rnCard;
                     ConvertFaceCardToNumberValue(pScore2);
                     playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
-                    System.Diagnostics.Debug.Print(dCard);
+                    Debug.Print("Player card 2: " + dCard);
 
                     // Get player score and display it
                     playerScore = pScore1 + pScore2;
@@ -139,7 +145,7 @@ namespace Blackjack
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 
@@ -188,7 +194,7 @@ namespace Blackjack
                 GameOver("tooManyCards");
             }
 
-            playerScore = playerScore + rnCard;
+            playerScore += cardValue;
             lblTotal.Text = "Score: " + playerScore;
 
             if (playerScore > 21)
@@ -203,6 +209,13 @@ namespace Blackjack
             lblDealer.Visible = true;
             cmdHit.Enabled = false;
             cmdStand.Enabled = false;
+
+            // Convert number value to letter for file name purposes
+            ConvertFaceCardToFileName(dScore1);
+            // Choose a random suit
+            SelectSuit();
+            // Show the dealer's first card
+            dealerCard1.Image = Image.FromFile("Content/Cards/" + suit + "-" + card + "-75.png");
 
             if (Condition == "playerBust")
                 MessageBox.Show("China or Bust? You just busted.", "Loss");
@@ -245,11 +258,14 @@ namespace Blackjack
         private void DealCard()
         {
             rnCard = RandomNumber(1, 13);
-            System.Diagnostics.Debug.Print(rnCard.ToString());
+            Debug.Print("DealCard (rnCard): " + rnCard.ToString());
+            ConvertFaceCardToFileName(rnCard);
+            Debug.Print("DealCard (rnCard->Face): " + card);
             ConvertFaceCardToNumberValue(rnCard);
+            Debug.Print("DealCard (rnCard->Num): " + cardValue);
             SelectSuit();
             dCard = suit + "-" + card + "-75.png";
-            System.Diagnostics.Debug.Print(dCard);
+            Debug.Print("DealCard (dCard): " + dCard);
         }
 
         private void Stand()
@@ -262,8 +278,12 @@ namespace Blackjack
             lblDealer.Text = "Dealer score: " + dealerScore;
 
             ConvertFaceCardToNumberValue(dScore1);
+            dScore1 = cardValue;
+            ConvertFaceCardToFileName(dScore1);
+            SelectSuit();
 
-            dealerCard1.Image = Image.FromFile("Content/Cards/diamonds-" + card + "-75.png");
+            dealerCard1.Image = Image.FromFile("Content/Cards/" + suit + 
+                " -" + card + "-75.png");
             if (dealerScore < 17)
             {
                 DealCard();
@@ -286,28 +306,32 @@ namespace Blackjack
             return random.Next(min, max);
         }
 
-        private void ConvertFaceCardToNumberValue(int FaceCard)
+        private int ConvertFaceCardToNumberValue(int FaceCard)
         {
-            // If the card is a "face card", convert its number to a letter and its value to >10
+            // If the card is a "face card", convert its value to 10
+            if (FaceCard == 11 || FaceCard == 12 || FaceCard == 13)
+                cardValue = 10;
+            else
+                cardValue = FaceCard;
+
+            return cardValue;
+        }
+
+        private string ConvertFaceCardToFileName(int FaceCard)
+        {
+            // If the card is a "face card", convert the integer to a letter for file names
             if (FaceCard == 1)
                 card = "a";
             else if (FaceCard == 11)
-            {
                 card = "j";
-                FaceCard = 10;
-            }
             else if (FaceCard == 12)
-            {
                 card = "q";
-                FaceCard = 10;
-            }
             else if (FaceCard == 13)
-            {
                 card = "k";
-                FaceCard = 10;
-            }
             else
                 card = FaceCard.ToString();
+
+            return card;
         }
 
         private string SelectSuit()
@@ -329,7 +353,7 @@ namespace Blackjack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.5_02 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.5_03 by Ian P (ippavlin)";
             StartNewGame();
         }
 

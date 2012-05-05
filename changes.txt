@@ -1,3 +1,9 @@
+* BUG: Jacks/Queens/Kings are still being treated as 11/12/13 in a certain case
+* TODO: Implement aces acting as 1 OR 11.
+
+# May 4, 2012 - v0.1.5_03
+	- dealer's first card now becomes visible when the game ends
+
 # May 1, 2012 - v0.1.5_02
 	- added a check for Dealer > Player to "dealerWins"
 	- added a check for "playerWins" to Stand()
@@ -22,8 +28,6 @@
 	- added comments throughout code for easier understanding
 	- re-wrote the GameOver method to use conditions passed to it to display the resulting message
 	- removed unused Microsoft.VisualBasic reference as Betting is done via its own screen
-	* BUG: Jacks/Queens/Kings are still being treated as 11/12/13 in a certain case
-	* TODO: Implement aces acting as 1 OR 11.
 	
 # April 29, 2012 - v0.1.3_02
 	- lblDealerMore is now reset to "+" on new game to prevent numbers from previous rounds appearing
