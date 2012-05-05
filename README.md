@@ -5,11 +5,11 @@ Author: Ian P (ippavlin)
 
 **Screenshot:** http://i.imgur.com/HsNqU.png (older version)
 
-A blackjack game in C#. The game currently handles Hits and Stands, 
-as well as simulating the dealer's hand if the dealer's score is <17. 
-Win/Lose checks are in place. The player can only have a total of 9 cards, 
-or else they lose. I'm still working on making the UI better looking instead 
-of solid green for the score/option panels.
+A blackjack game in C#. The game currently handles Hits and Stands,
+Double-downs, Surrenders, and I'm currently working on Splits, as well
+as simulating the dealer's hand if the dealer's score is <17. Win/Lose
+checks are in place. The player can only have a total of 9 cards, or
+else they lose.
 
 CREDITS
 
