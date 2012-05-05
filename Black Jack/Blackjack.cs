@@ -94,12 +94,14 @@ namespace Blackjack
                 Debug.Print("Dealer card 1: " + dScore1.ToString());
                 // Convert any face cards to appropriate number values
                 ConvertFaceCardToNumberValue(dScore1);
+                dScore1 = cardValue;
                 Debug.Print("dScore1 -> Num: " + dScore1);
                 // Deal dealer card 2
                 dScore2 = RandomNumber(1, 13);
                 Debug.Print("Dealer card 2: " + dScore2.ToString());
                 // Convert any face cards to appropriate number values
                 ConvertFaceCardToNumberValue(dScore2);
+                dScore2 = cardValue;
                 ConvertFaceCardToFileName(dScore2);
                 Debug.Print("dScore2 -> Num: " + dScore2);
                 // Calculate dealer total
@@ -125,6 +127,7 @@ namespace Blackjack
                     DealCard();
                     pScore1 = rnCard;
                     ConvertFaceCardToNumberValue(pScore1);
+                    pScore1 = cardValue;
                     playerCard1.Image = Image.FromFile("Content/Cards/" + dCard);
                     Debug.Print("Player card 1: " + dCard);
 
@@ -132,6 +135,7 @@ namespace Blackjack
                     DealCard();
                     pScore2 = rnCard;
                     ConvertFaceCardToNumberValue(pScore2);
+                    pScore2 = cardValue;
                     playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
                     Debug.Print("Player card 2: " + dCard);
 
@@ -283,7 +287,7 @@ namespace Blackjack
             SelectSuit();
 
             dealerCard1.Image = Image.FromFile("Content/Cards/" + suit + 
-                " -" + card + "-75.png");
+                "-" + card + "-75.png");
             if (dealerScore < 17)
             {
                 DealCard();
@@ -298,6 +302,8 @@ namespace Blackjack
                 GameOver("dealerBust");
             else if (playerScore > dealerScore)
                 GameOver("playerWins");
+            else if (playerScore == dealerScore)
+                GameOver("draw");
         }
 
         private int RandomNumber(int min, int max)
@@ -353,7 +359,7 @@ namespace Blackjack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.5_03 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.6 by Ian P (ippavlin)";
             StartNewGame();
         }
 

@@ -31,6 +31,7 @@ namespace Blackjack
         private void Betting_Load(object sender, EventArgs e)
         {
             lblBalance.Text = "Balance: $" + Balance.ToString("#0.00");
+            numBet.Maximum = Balance;
         }
 
         private void cmdBet_Click(object sender, EventArgs e)

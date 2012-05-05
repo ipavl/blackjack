@@ -1,5 +1,10 @@
-* BUG: Jacks/Queens/Kings are still being treated as 11/12/13 in a certain case
-* TODO: Implement aces acting as 1 OR 11.
+* TODO: Implement aces acting as both 1 and 11.
+
+# May 4, 2012 - v0.1.6
+	- fixed a bug where the dealer's first card would look for "<suit> -<card>" instead of "<suit>-<card>"
+	- added a check for game draws for Stand() when dealerScore = playerScore
+	- the maximum amount that can be entered into the betting numeric up/down control is now equal to the balance
+	- Jacks, Queens, and Kings are now properly worth 10 each (instead of 11, 12, and 13, respectively)
 
 # May 4, 2012 - v0.1.5_03
 	- dealer's first card now becomes visible when the game ends
