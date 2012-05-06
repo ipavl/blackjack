@@ -29,11 +29,6 @@ namespace Blackjack
         #endregion
 
         #region "Controls"
-        private void cmdHit_Click(object sender, EventArgs e)
-        {
-            DealPlayerCard();
-        }
-
         private void cmdNewGame_Click(object sender, EventArgs e)
         {
             if (isGameOver)
@@ -54,6 +49,11 @@ namespace Blackjack
             }
         }
 
+        private void cmdHit_Click(object sender, EventArgs e)
+        {
+            DealPlayerCard();
+        }
+
         private void cmdStand_Click(object sender, EventArgs e)
         {
             Stand();
@@ -62,6 +62,11 @@ namespace Blackjack
         private void cmdDoubleDown_Click(object sender, EventArgs e)
         {
             DoubleDown();
+        }
+
+        private void cmdSplit_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
@@ -139,7 +144,8 @@ namespace Blackjack
                 // Choose a random suit
                 SelectSuit();
                 // Show the dealer's second card
-                dealerCard2.Image = Image.FromFile("Content/Cards/" + suit + "-" + card + "-75.png");
+                dealerCard2.Image = Image.FromFile("Content/Cards/" + suit + "-" +
+                    card + "-75.png");
                 Debug.Print("dealerScore: " + dealerScore);
                 // Hide dealer's score
                 lblDealer.Visible = false;
@@ -166,7 +172,7 @@ namespace Blackjack
                     Debug.Print("Player card 2: " + dCard);
 
                     // Split
-                    if (pScore1 == pScore2)
+                    if (pScore1 == pScore2 && playerCardsCount == 2)
                     {
                         cmdSplit.Enabled = true;
                     }
@@ -268,47 +274,64 @@ namespace Blackjack
 
             dealerCard1.Image = Image.FromFile("Content/Cards/" + suit +
                 "-" + card + "-75.png");
-            if (dealerScore < 17)
+
+            if (dealerScore < 17 && dealerScore <= 21)
             {
                 DealCard();
-                dealerScore = dealerScore + rnCard;
+                dealerScore += rnCard;
                 lblDealerMore.Text = lblDealerMore.Text + " " + rnCard;
                 lblDealerMore.Visible = true;
                 Stand();
             }
-            else if (dealerScore > 17 && dealerScore <= 21 && dealerScore > playerScore)
-                GameOver("dealerWins");
-            else if (dealerScore > 21)
-                GameOver("dealerBust");
-            else if (playerScore > dealerScore)
-                GameOver("playerWins");
-            else if (playerScore == dealerScore)
-                GameOver("draw");
+            if (isGameOver == false)
+            {
+                if (dealerScore > 17 && dealerScore <= 21 && dealerScore > playerScore)
+                    GameOver("dealerWins");
+                else if (dealerScore > 21)
+                    GameOver("dealerBust");
+                else if (playerScore > dealerScore)
+                    GameOver("playerWins");
+                else if (playerScore == dealerScore)
+                    GameOver("draw");
+            }
         }
 
         private void DoubleDown()
         {
+            bool DoubleDown = false;
             if (playerCardsCount == 2)
             {
-                // TODO: Implement "all in if can't afford" here instead
-                if (Betting.Bet < Betting.Balance)
+                if (Betting.Bet < Betting.Balance && Betting.Balance > 0)
                 {
                     // Take another "bet" of the same amount from the player
                     Betting.Balance -= Betting.Bet;
                     // Double the player's bet
                     Betting.Bet *= 2;
+                    DoubleDown = true;
+                }
+                else if (Betting.Bet > Betting.Balance && Betting.Balance > 0)
+                {
+                    // All in
+                    Betting.Bet += Betting.Balance;
+                    Betting.Balance -= Betting.Balance;
+                    DoubleDown = true;
+                }
+                else
+                    MessageBox.Show("You cannot afford to double-down.", "Blackjack");
+
+                if (DoubleDown == true)
+                {
                     // Set betting labels
                     lblBet.Text = "Bet: $" + Betting.Bet.ToString("#0.00");
                     lblBalance.Text = "Balance: $" + Betting.Balance.ToString("#0.00");
                     // Deal the player a card
                     DealPlayerCard();
-                    // Force the player to stand
-                    Stand();
                     // Disable double-down button
                     cmdDoubleDown.Enabled = false;
+                    DoubleDown = false;
+                    // Force the player to stand
+                    Stand();
                 }
-                else
-                    MessageBox.Show("You cannot afford to double-down.", "Blackjack");
             }
             else
                 MessageBox.Show("You cannot double-down with more than 2 cards.", "Blackjack");
@@ -426,7 +449,7 @@ namespace Blackjack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.7 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.8 by Ian P (ippavlin)";
             StartNewGame();
         }
 

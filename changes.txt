@@ -1,6 +1,12 @@
 * TODO: Implement aces acting as both 1 and 11.
-		Implement "all in if can't afford to double down" instead of "You cannot afford to double-down"
 
+# May 6, 2012 - v0.1.8
+	- split button is no longer enabled if the player has been dealt a card
+	- doubling down with a balance less than the player's bet will now go "all in"
+		- a balance of zero will not all the player to double down
+	- fixed a bug where GameOver would be looped through multiple times, causing different messages
+		(e.g. the player would bust, get told they busted, and then get told their hand is higher than the dealer's)
+		
 # May 4, 2012 - v0.1.7
 	- added the ability to surrender a match
 		- "New Game" button is now labelled "Surrender" if the game is in progress

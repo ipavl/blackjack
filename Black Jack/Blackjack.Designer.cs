@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Blackjack));
             this.grpOptions = new System.Windows.Forms.GroupBox();
+            this.cmdSplit = new System.Windows.Forms.Button();
+            this.cmdDoubleDown = new System.Windows.Forms.Button();
             this.lblBalance = new System.Windows.Forms.Label();
             this.lblBet = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.playerCard8 = new System.Windows.Forms.PictureBox();
             this.playerCard9 = new System.Windows.Forms.PictureBox();
             this.cmdNewGame = new System.Windows.Forms.Button();
-            this.cmdDoubleDown = new System.Windows.Forms.Button();
-            this.cmdSplit = new System.Windows.Forms.Button();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
@@ -84,6 +84,29 @@
             this.grpOptions.TabIndex = 4;
             this.grpOptions.TabStop = false;
             this.grpOptions.Text = "Options";
+            // 
+            // cmdSplit
+            // 
+            this.cmdSplit.Enabled = false;
+            this.cmdSplit.ForeColor = System.Drawing.Color.Black;
+            this.cmdSplit.Location = new System.Drawing.Point(118, 54);
+            this.cmdSplit.Name = "cmdSplit";
+            this.cmdSplit.Size = new System.Drawing.Size(85, 29);
+            this.cmdSplit.TabIndex = 10;
+            this.cmdSplit.Text = "S&plit";
+            this.cmdSplit.UseVisualStyleBackColor = true;
+            this.cmdSplit.Click += new System.EventHandler(this.cmdSplit_Click);
+            // 
+            // cmdDoubleDown
+            // 
+            this.cmdDoubleDown.ForeColor = System.Drawing.Color.Black;
+            this.cmdDoubleDown.Location = new System.Drawing.Point(22, 54);
+            this.cmdDoubleDown.Name = "cmdDoubleDown";
+            this.cmdDoubleDown.Size = new System.Drawing.Size(85, 29);
+            this.cmdDoubleDown.TabIndex = 9;
+            this.cmdDoubleDown.Text = "&Double";
+            this.cmdDoubleDown.UseVisualStyleBackColor = true;
+            this.cmdDoubleDown.Click += new System.EventHandler(this.cmdDoubleDown_Click);
             // 
             // lblBalance
             // 
@@ -294,28 +317,6 @@
             this.cmdNewGame.Text = "Surrender";
             this.cmdNewGame.UseVisualStyleBackColor = true;
             this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
-            // 
-            // cmdDoubleDown
-            // 
-            this.cmdDoubleDown.ForeColor = System.Drawing.Color.Black;
-            this.cmdDoubleDown.Location = new System.Drawing.Point(22, 54);
-            this.cmdDoubleDown.Name = "cmdDoubleDown";
-            this.cmdDoubleDown.Size = new System.Drawing.Size(85, 29);
-            this.cmdDoubleDown.TabIndex = 9;
-            this.cmdDoubleDown.Text = "&Double";
-            this.cmdDoubleDown.UseVisualStyleBackColor = true;
-            this.cmdDoubleDown.Click += new System.EventHandler(this.cmdDoubleDown_Click);
-            // 
-            // cmdSplit
-            // 
-            this.cmdSplit.Enabled = false;
-            this.cmdSplit.ForeColor = System.Drawing.Color.Black;
-            this.cmdSplit.Location = new System.Drawing.Point(118, 54);
-            this.cmdSplit.Name = "cmdSplit";
-            this.cmdSplit.Size = new System.Drawing.Size(85, 29);
-            this.cmdSplit.TabIndex = 10;
-            this.cmdSplit.Text = "S&plit";
-            this.cmdSplit.UseVisualStyleBackColor = true;
             // 
             // Blackjack
             // 
