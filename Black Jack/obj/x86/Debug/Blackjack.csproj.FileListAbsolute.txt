@@ -10,3 +10,4 @@ C:\Users\Ian\documents\visual studio 2010\Projects\CSharp\Black Jack\Black Jack\
 C:\Users\Ian\Documents\Visual Studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Blackjack.Betting.resources
 C:\Users\Ian\Documents\Visual Studio 2010\Projects\CSharp\Black Jack\Black Jack\bin\Debug\Blackjack.exe.config
 C:\Users\Ian\Documents\Visual Studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Blackjack.Blackjack.resources
+C:\Users\Ian\Documents\Visual Studio 2010\Projects\CSharp\Black Jack\Black Jack\obj\x86\Debug\Blackjack.Split.resources

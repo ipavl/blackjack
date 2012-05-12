@@ -39,32 +39,32 @@
             this.cmdHit = new System.Windows.Forms.Button();
             this.playerCard1 = new System.Windows.Forms.PictureBox();
             this.playerCard2 = new System.Windows.Forms.PictureBox();
+            this.cmdNewGame = new System.Windows.Forms.Button();
+            this.playerCard9 = new System.Windows.Forms.PictureBox();
+            this.playerCard8 = new System.Windows.Forms.PictureBox();
+            this.playerCard7 = new System.Windows.Forms.PictureBox();
+            this.playerCard6 = new System.Windows.Forms.PictureBox();
+            this.playerCard5 = new System.Windows.Forms.PictureBox();
+            this.playerCard4 = new System.Windows.Forms.PictureBox();
+            this.playerCard3 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDealerMore = new System.Windows.Forms.Label();
             this.dealerCard2 = new System.Windows.Forms.PictureBox();
             this.dealerCard1 = new System.Windows.Forms.PictureBox();
             this.lblDealer = new System.Windows.Forms.Label();
-            this.playerCard3 = new System.Windows.Forms.PictureBox();
-            this.playerCard4 = new System.Windows.Forms.PictureBox();
-            this.playerCard5 = new System.Windows.Forms.PictureBox();
-            this.playerCard6 = new System.Windows.Forms.PictureBox();
-            this.playerCard7 = new System.Windows.Forms.PictureBox();
-            this.playerCard8 = new System.Windows.Forms.PictureBox();
-            this.playerCard9 = new System.Windows.Forms.PictureBox();
-            this.cmdNewGame = new System.Windows.Forms.Button();
             this.grpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard3)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard9)).BeginInit();
             this.SuspendLayout();
             // 
             // grpOptions
@@ -87,24 +87,24 @@
             // 
             // cmdSplit
             // 
+            this.cmdSplit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdSplit.BackgroundImage")));
             this.cmdSplit.Enabled = false;
             this.cmdSplit.ForeColor = System.Drawing.Color.Black;
             this.cmdSplit.Location = new System.Drawing.Point(118, 54);
             this.cmdSplit.Name = "cmdSplit";
             this.cmdSplit.Size = new System.Drawing.Size(85, 29);
             this.cmdSplit.TabIndex = 10;
-            this.cmdSplit.Text = "S&plit";
             this.cmdSplit.UseVisualStyleBackColor = true;
             this.cmdSplit.Click += new System.EventHandler(this.cmdSplit_Click);
             // 
             // cmdDoubleDown
             // 
+            this.cmdDoubleDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdDoubleDown.BackgroundImage")));
             this.cmdDoubleDown.ForeColor = System.Drawing.Color.Black;
             this.cmdDoubleDown.Location = new System.Drawing.Point(22, 54);
             this.cmdDoubleDown.Name = "cmdDoubleDown";
             this.cmdDoubleDown.Size = new System.Drawing.Size(85, 29);
             this.cmdDoubleDown.TabIndex = 9;
-            this.cmdDoubleDown.Text = "&Double";
             this.cmdDoubleDown.UseVisualStyleBackColor = true;
             this.cmdDoubleDown.Click += new System.EventHandler(this.cmdDoubleDown_Click);
             // 
@@ -143,23 +143,23 @@
             // 
             // cmdStand
             // 
+            this.cmdStand.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdStand.BackgroundImage")));
             this.cmdStand.ForeColor = System.Drawing.Color.Black;
             this.cmdStand.Location = new System.Drawing.Point(118, 19);
             this.cmdStand.Name = "cmdStand";
             this.cmdStand.Size = new System.Drawing.Size(85, 29);
             this.cmdStand.TabIndex = 5;
-            this.cmdStand.Text = "&Stand";
             this.cmdStand.UseVisualStyleBackColor = true;
             this.cmdStand.Click += new System.EventHandler(this.cmdStand_Click);
             // 
             // cmdHit
             // 
+            this.cmdHit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cmdHit.BackgroundImage")));
             this.cmdHit.ForeColor = System.Drawing.Color.Black;
             this.cmdHit.Location = new System.Drawing.Point(22, 19);
             this.cmdHit.Name = "cmdHit";
             this.cmdHit.Size = new System.Drawing.Size(85, 29);
             this.cmdHit.TabIndex = 4;
-            this.cmdHit.Text = "&Hit";
             this.cmdHit.UseVisualStyleBackColor = true;
             this.cmdHit.Click += new System.EventHandler(this.cmdHit_Click);
             // 
@@ -181,6 +181,86 @@
             this.playerCard2.TabIndex = 5;
             this.playerCard2.TabStop = false;
             // 
+            // cmdNewGame
+            // 
+            this.cmdNewGame.Location = new System.Drawing.Point(0, 0);
+            this.cmdNewGame.Name = "cmdNewGame";
+            this.cmdNewGame.Size = new System.Drawing.Size(68, 20);
+            this.cmdNewGame.TabIndex = 14;
+            this.cmdNewGame.Text = "Surrender";
+            this.cmdNewGame.UseVisualStyleBackColor = true;
+            this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
+            // 
+            // playerCard9
+            // 
+            this.playerCard9.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard9.Location = new System.Drawing.Point(525, 181);
+            this.playerCard9.Name = "playerCard9";
+            this.playerCard9.Size = new System.Drawing.Size(75, 107);
+            this.playerCard9.TabIndex = 22;
+            this.playerCard9.TabStop = false;
+            this.playerCard9.Visible = false;
+            // 
+            // playerCard8
+            // 
+            this.playerCard8.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard8.Location = new System.Drawing.Point(444, 181);
+            this.playerCard8.Name = "playerCard8";
+            this.playerCard8.Size = new System.Drawing.Size(75, 107);
+            this.playerCard8.TabIndex = 21;
+            this.playerCard8.TabStop = false;
+            this.playerCard8.Visible = false;
+            // 
+            // playerCard7
+            // 
+            this.playerCard7.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard7.Location = new System.Drawing.Point(363, 181);
+            this.playerCard7.Name = "playerCard7";
+            this.playerCard7.Size = new System.Drawing.Size(75, 107);
+            this.playerCard7.TabIndex = 20;
+            this.playerCard7.TabStop = false;
+            this.playerCard7.Visible = false;
+            // 
+            // playerCard6
+            // 
+            this.playerCard6.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard6.Location = new System.Drawing.Point(282, 181);
+            this.playerCard6.Name = "playerCard6";
+            this.playerCard6.Size = new System.Drawing.Size(75, 107);
+            this.playerCard6.TabIndex = 19;
+            this.playerCard6.TabStop = false;
+            this.playerCard6.Visible = false;
+            // 
+            // playerCard5
+            // 
+            this.playerCard5.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard5.Location = new System.Drawing.Point(201, 181);
+            this.playerCard5.Name = "playerCard5";
+            this.playerCard5.Size = new System.Drawing.Size(75, 107);
+            this.playerCard5.TabIndex = 18;
+            this.playerCard5.TabStop = false;
+            this.playerCard5.Visible = false;
+            // 
+            // playerCard4
+            // 
+            this.playerCard4.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard4.Location = new System.Drawing.Point(120, 181);
+            this.playerCard4.Name = "playerCard4";
+            this.playerCard4.Size = new System.Drawing.Size(75, 107);
+            this.playerCard4.TabIndex = 17;
+            this.playerCard4.TabStop = false;
+            this.playerCard4.Visible = false;
+            // 
+            // playerCard3
+            // 
+            this.playerCard3.BackColor = System.Drawing.Color.Transparent;
+            this.playerCard3.Location = new System.Drawing.Point(39, 181);
+            this.playerCard3.Name = "playerCard3";
+            this.playerCard3.Size = new System.Drawing.Size(75, 107);
+            this.playerCard3.TabIndex = 16;
+            this.playerCard3.TabStop = false;
+            this.playerCard3.Visible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
@@ -189,10 +269,10 @@
             this.groupBox1.Controls.Add(this.dealerCard1);
             this.groupBox1.Controls.Add(this.lblDealer);
             this.groupBox1.ForeColor = System.Drawing.Color.Lime;
-            this.groupBox1.Location = new System.Drawing.Point(132, 50);
+            this.groupBox1.Location = new System.Drawing.Point(132, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(374, 127);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dealer";
             // 
@@ -238,93 +318,12 @@
             this.lblDealer.TabIndex = 6;
             this.lblDealer.Text = "Dealer Total: #";
             // 
-            // playerCard3
-            // 
-            this.playerCard3.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard3.Location = new System.Drawing.Point(39, 195);
-            this.playerCard3.Name = "playerCard3";
-            this.playerCard3.Size = new System.Drawing.Size(75, 107);
-            this.playerCard3.TabIndex = 7;
-            this.playerCard3.TabStop = false;
-            this.playerCard3.Visible = false;
-            // 
-            // playerCard4
-            // 
-            this.playerCard4.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard4.Location = new System.Drawing.Point(120, 195);
-            this.playerCard4.Name = "playerCard4";
-            this.playerCard4.Size = new System.Drawing.Size(75, 107);
-            this.playerCard4.TabIndex = 8;
-            this.playerCard4.TabStop = false;
-            this.playerCard4.Visible = false;
-            // 
-            // playerCard5
-            // 
-            this.playerCard5.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard5.Location = new System.Drawing.Point(201, 195);
-            this.playerCard5.Name = "playerCard5";
-            this.playerCard5.Size = new System.Drawing.Size(75, 107);
-            this.playerCard5.TabIndex = 9;
-            this.playerCard5.TabStop = false;
-            this.playerCard5.Visible = false;
-            // 
-            // playerCard6
-            // 
-            this.playerCard6.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard6.Location = new System.Drawing.Point(282, 195);
-            this.playerCard6.Name = "playerCard6";
-            this.playerCard6.Size = new System.Drawing.Size(75, 107);
-            this.playerCard6.TabIndex = 10;
-            this.playerCard6.TabStop = false;
-            this.playerCard6.Visible = false;
-            // 
-            // playerCard7
-            // 
-            this.playerCard7.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard7.Location = new System.Drawing.Point(363, 195);
-            this.playerCard7.Name = "playerCard7";
-            this.playerCard7.Size = new System.Drawing.Size(75, 107);
-            this.playerCard7.TabIndex = 11;
-            this.playerCard7.TabStop = false;
-            this.playerCard7.Visible = false;
-            // 
-            // playerCard8
-            // 
-            this.playerCard8.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard8.Location = new System.Drawing.Point(444, 195);
-            this.playerCard8.Name = "playerCard8";
-            this.playerCard8.Size = new System.Drawing.Size(75, 107);
-            this.playerCard8.TabIndex = 12;
-            this.playerCard8.TabStop = false;
-            this.playerCard8.Visible = false;
-            // 
-            // playerCard9
-            // 
-            this.playerCard9.BackColor = System.Drawing.Color.Transparent;
-            this.playerCard9.Location = new System.Drawing.Point(525, 195);
-            this.playerCard9.Name = "playerCard9";
-            this.playerCard9.Size = new System.Drawing.Size(75, 107);
-            this.playerCard9.TabIndex = 13;
-            this.playerCard9.TabStop = false;
-            this.playerCard9.Visible = false;
-            // 
-            // cmdNewGame
-            // 
-            this.cmdNewGame.Location = new System.Drawing.Point(0, 0);
-            this.cmdNewGame.Name = "cmdNewGame";
-            this.cmdNewGame.Size = new System.Drawing.Size(68, 20);
-            this.cmdNewGame.TabIndex = 14;
-            this.cmdNewGame.Text = "Surrender";
-            this.cmdNewGame.UseVisualStyleBackColor = true;
-            this.cmdNewGame.Click += new System.EventHandler(this.cmdNewGame_Click);
-            // 
             // Blackjack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(639, 467);
-            this.Controls.Add(this.cmdNewGame);
             this.Controls.Add(this.playerCard9);
             this.Controls.Add(this.playerCard8);
             this.Controls.Add(this.playerCard7);
@@ -333,6 +332,7 @@
             this.Controls.Add(this.playerCard4);
             this.Controls.Add(this.playerCard3);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.cmdNewGame);
             this.Controls.Add(this.playerCard2);
             this.Controls.Add(this.playerCard1);
             this.Controls.Add(this.grpOptions);
@@ -345,17 +345,17 @@
             this.grpOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard3)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerCard9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,23 +368,23 @@
         private System.Windows.Forms.Button cmdHit;
         private System.Windows.Forms.PictureBox playerCard1;
         private System.Windows.Forms.PictureBox playerCard2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox dealerCard2;
-        private System.Windows.Forms.PictureBox dealerCard1;
-        private System.Windows.Forms.Label lblDealer;
-        private System.Windows.Forms.PictureBox playerCard3;
-        private System.Windows.Forms.PictureBox playerCard4;
-        private System.Windows.Forms.PictureBox playerCard5;
-        private System.Windows.Forms.PictureBox playerCard6;
-        private System.Windows.Forms.PictureBox playerCard7;
-        private System.Windows.Forms.PictureBox playerCard8;
-        private System.Windows.Forms.PictureBox playerCard9;
-        private System.Windows.Forms.Label lblDealerMore;
         private System.Windows.Forms.Button cmdNewGame;
         private System.Windows.Forms.Label lblBet;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Button cmdSplit;
         private System.Windows.Forms.Button cmdDoubleDown;
+        private System.Windows.Forms.PictureBox playerCard9;
+        private System.Windows.Forms.PictureBox playerCard8;
+        private System.Windows.Forms.PictureBox playerCard7;
+        private System.Windows.Forms.PictureBox playerCard6;
+        private System.Windows.Forms.PictureBox playerCard5;
+        private System.Windows.Forms.PictureBox playerCard4;
+        private System.Windows.Forms.PictureBox playerCard3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblDealerMore;
+        public System.Windows.Forms.PictureBox dealerCard2;
+        private System.Windows.Forms.PictureBox dealerCard1;
+        private System.Windows.Forms.Label lblDealer;
     }
 }
 

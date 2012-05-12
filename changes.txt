@@ -1,5 +1,25 @@
 * TODO: Implement aces acting as both 1 and 11.
 
+# May 11, 2012 - v0.1.9pre (Build 16)
+	* This is a pre-release build; splitting is currently partially implemented, but inaccessible. The rest of the 
+	game should work fine, but bugs may pop up.
+
+	- continued implementing splitting*
+		- form now copies bets/balance over (bet is split in half between the two hands)
+		- organized form better
+		Note: was going to make it share the main form via groupboxes+visibility, but went with a separate form for now
+	- Hit/Stand/Double/Split buttons now have image backgrounds
+		- New Game/Surrender buttons ARE also made, but not implemented yet (wrong size)
+		- added updater EXE + associated DLL to output folder, but currently is not included within the solution itself
+			- updater currently links to my private (locally hosted) server, so it will not update unless you have a server
+				running on the same IP (192.168.56.101) with a version.txt file and a blackjack.zip file in the folder:
+				<root>/assets/files/blackjack/
+			- TODO: Make client write its version to version.txt (or something of the like)
+
+# May 6, 2012 - v0.1.8_01 (Build 15)
+	- player "score" label now says "total" as it was originally supposed to say
+	- split "check" now occurs after player card total has been defined so the button becomes enabled as it should
+
 # May 6, 2012 - v0.1.8
 	- split button is no longer enabled if the player has been dealt a card
 	- doubling down with a balance less than the player's bet will now go "all in"

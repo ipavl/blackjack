@@ -22,10 +22,17 @@ namespace Blackjack
     public partial class Blackjack : Form
     {
         #region "Variables"
+        // Variables shared for split
+        public static string DealerSecondCard, PlayerFirstCard, PlayerSecondCard;
+        public static int pScore1, pScore2;
+        public static bool isGameOver;
+
+        // Local variables dealing with card selection / value
         private int playerScore, dealerScore, rnCard, rnSuit, playerCardsCount, cardValue;
-        private int dScore1, dScore2, pScore1, pScore2;
+        private int dScore1, dScore2;
+
+        // Local variables dealing with card file names
         private string suit, card, dCard;
-        private bool isGameOver;
         #endregion
 
         #region "Controls"
@@ -66,7 +73,10 @@ namespace Blackjack
 
         private void cmdSplit_Click(object sender, EventArgs e)
         {
-
+            // Show split form
+            Split splitForm = new Split();
+            splitForm.StartPosition = FormStartPosition.CenterParent;
+            splitForm.ShowDialog();
         }
         #endregion
 
@@ -81,8 +91,8 @@ namespace Blackjack
                 bettingForm.ShowDialog();
 
                 // Set betting labels
-                lblBet.Text = "Bet: $" + Betting.Bet.ToString("#0.00");
-                lblBalance.Text = "Balance: $" + Betting.Balance.ToString("#0.00");
+                lblBet.Text = "Bet: " + Betting.Bet.ToString("$0.00");
+                lblBalance.Text = "Balance: " + Betting.Balance.ToString("$0.00");
 
                 // Reset controls/variables for new round
                 cmdHit.Enabled = true;
@@ -146,6 +156,9 @@ namespace Blackjack
                 // Show the dealer's second card
                 dealerCard2.Image = Image.FromFile("Content/Cards/" + suit + "-" +
                     card + "-75.png");
+                // Save second card to variable in case we need it for split
+                DealerSecondCard = suit + "-" + card + "-75.png";
+
                 Debug.Print("dealerScore: " + dealerScore);
                 // Hide dealer's score
                 lblDealer.Visible = false;
@@ -158,29 +171,34 @@ namespace Blackjack
                     // Deal player card 1
                     DealCard();
                     pScore1 = rnCard;
+                    //pScore1 = 5; // TESTING ONLY -- REMOVE
+                    //dCard = "diamonds-5-75.png"; // TESTING ONLY -- REMOVE
                     ConvertFaceCardToNumberValue(pScore1);
                     pScore1 = cardValue;
                     playerCard1.Image = Image.FromFile("Content/Cards/" + dCard);
+                    PlayerFirstCard = dCard;
                     Debug.Print("Player card 1: " + dCard);
 
                     // Deal player card 2
                     DealCard();
                     pScore2 = rnCard;
+                    //pScore2 = 5; // TESTING ONLY -- REMOVE
                     ConvertFaceCardToNumberValue(pScore2);
                     pScore2 = cardValue;
                     playerCard2.Image = Image.FromFile("Content/Cards/" + dCard);
+                    PlayerSecondCard = dCard;
                     Debug.Print("Player card 2: " + dCard);
+
+                    // Get player total and display it
+                    playerScore = pScore1 + pScore2;
+                    lblTotal.Text = "Total: " + playerScore;
+                    playerCardsCount = 2;
 
                     // Split
                     if (pScore1 == pScore2 && playerCardsCount == 2)
                     {
-                        cmdSplit.Enabled = true;
+                        //cmdSplit.Enabled = true; // ENABLED DURING TESTING
                     }
-
-                    // Get player score and display it
-                    playerScore = pScore1 + pScore2;
-                    lblTotal.Text = "Score: " + playerScore;
-                    playerCardsCount = 2;
                 }
                 else
                     GameOver("dealer21");
@@ -251,7 +269,7 @@ namespace Blackjack
             }
 
             playerScore += cardValue;
-            lblTotal.Text = "Score: " + playerScore;
+            lblTotal.Text = "Total: " + playerScore;
 
             if (playerScore > 21)
                 GameOver("playerBust");
@@ -449,7 +467,7 @@ namespace Blackjack
 
         private void Blackjack_Load(object sender, EventArgs e)
         {
-            this.Text = "Blackjack v0.1.8 by Ian P (ippavlin)";
+            this.Text = "Blackjack v0.1.9pre by Ian P (ippavlin)";
             StartNewGame();
         }
 
